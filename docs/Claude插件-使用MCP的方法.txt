@@ -1,21 +1,22 @@
 claude for VS code 插件 和CIL命令行的 MCP的安装方法是不同的
 
-插件的MCP 服务器配置写在 settings.json 中（mcpServers 字段），支持四个位置：
-关键发现：VSCode 扩展的 settings.json 不支持 mcpServers 字段。正确做法是使用 .mcp.json 文件
 
+关键发现：VSCode 扩展的 settings.json 不支持 mcpServers 字段。正确做法是使用 .mcp.json 文件
+我自己的json位置是 C:\Users\admin\.claude\settings.json 文件
+    需要在settings.json 中  "enabledMcpjsonServers": 这是开启的MCP服务
+    插件不支持直接在这个JSON里些mcpServers
+    而是在项目目录中 写了.mcp.json
+    本地项目中的 .mcp.json 只针对该项目,而不是全局
+
+插件的MCP 服务器配置写在 settings.json 中（mcpServers 字段），支持四个位置：
 作用域	文件路径
 项目（共享）	.claude/settings.json
 项目（本地）	.claude/settings.local.json
 用户（共享）	~/.claude/settings.json
 用户（本地）	~/.claude/settings.local.json
+我自己的json位置是 C:\Users\admin\.claude\settings.json 文件
 
 
-
-王延群自己的json位置是 C:\Users\admin\.claude\settings.json 文件
-    需要在 "enabledMcpjsonServers": 这是开启的MCP服务
-    插件不支持 直接在这个JSON里些mcpServers
-    而是在项目目录中 写了.mcp.json
-    本地项目中的 .mcp.json 只针对该项目,而不是全局
 
 
 
