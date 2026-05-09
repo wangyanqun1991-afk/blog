@@ -41,7 +41,7 @@
       "args": ["--from", "git+https://github.com/adhikasp/mcp-git-ingest", "mcp-git-ingest"]
     },
     "gitmcp": {
-      "//": "远程 MCP 服务接入",
+      "//": " github MCP 代码读取",
       "command": "npx",
       "args": [
         "mcp-remote",
@@ -49,7 +49,7 @@
       ]
     },
     "claude-context": {
-      "//": "基于 Zilliz Cloud 的 RAG 上下文管理（API Key 已擦除）",
+      "//": "基于claude-上下文管理（API Key 已擦除 按照openAI的格式填写deepseek即可）",
       "command": "npx",
       "args": ["-y", "@zilliz/claude-context-mcp@latest"],
       "env": {
