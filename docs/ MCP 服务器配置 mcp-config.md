@@ -6,6 +6,7 @@
 注意
   使用时,应该手动添加GitHub的token, 以及deepseek的token
   并且删除注释
+>路径:C:\Users\admin\.mcp.json
 
 ```json
 {
