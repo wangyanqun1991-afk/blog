@@ -2,6 +2,11 @@
 
 > 来源: `.mcp.json` 配置文件，敏感信息已擦除。
 
+
+注意
+  使用时,应该手动添加GitHub的token, 以及deepseek的token
+  并且删除注释
+
 ```json
 {
   "mcpServers": {
