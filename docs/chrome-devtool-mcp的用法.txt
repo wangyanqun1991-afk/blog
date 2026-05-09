@@ -1,0 +1,23 @@
+GitHub地址
+    https://github.com/ChromeDevTools/chrome-devtools-mcp#connecting-to-a-running-chrome-instance
+
+第一步 启动浏览器
+        手动打开浏览器
+            chrome://inspect/#remote-debugging
+            打勾,开启调试
+
+第二步, MCP配置json
+        "chrome-devtools": {
+            "timeout": 60,
+            "command": "npx",
+            "args": [
+                "chrome-devtools-mcp@latest",
+                "--autoConnect",
+                "-y",
+                "--channel=stable"
+            ],
+            "type": "stdio",
+            "disabled": true
+        }
+
+注意 一定要先打开chrome浏览器  开启9222端口

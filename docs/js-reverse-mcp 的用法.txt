@@ -1,0 +1,29 @@
+GitHub地址
+    https://github.com/zhizhuodemao/js-reverse-mcp
+
+
+第一步  启动浏览器
+    cmd 运行 "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="%TEMP%\chrome-debug"
+            参数说明:
+            --remote-debugging-port=9222  #这是命令的方式启动了远程调试端口
+            --user-data-dir="%TEMP%\chrome-debug"  #这是user数据存放目录
+
+第二步, MCP json文件配置
+            {
+            "mcpServers": {
+                "js-reverse": {
+                "disabled": false,
+                "timeout": 60,
+                "type": "stdio",
+                "command": "npx",
+                "args": [
+                    "js-reverse-mcp",
+                    "--browser-url=http://127.0.0.1:9222"
+                ]
+                }
+            }
+            }
+
+
+ 如果 把--browser-url= 改为--autoConnect 自动连接模式
+则需要手动设置 chrome://inspect/#remote-debugging 打勾远程调试
