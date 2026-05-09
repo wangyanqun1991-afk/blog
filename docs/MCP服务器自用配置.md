@@ -1,4 +1,6 @@
 # MCP 服务器配置
+>使用时要记得删除注释
+> VScode(claude插件) 文件   用户级存放位置 C:\Users\admin\.mcp.json
 
 ```json
 {
