@@ -1,20 +1,23 @@
-claude for VS code 插件 和CIL命令行的 MCP的安装方法是不同的
+注意: claude for VS code 插件 和CIL命令行的 MCP的安装方法是不同的
 
 
-关键发现：VSCode 扩展的 settings.json 不支持 mcpServers 字段。正确做法是使用 .mcp.json 文件
+关键发现：VSCode 扩展的 settings.json 不支持 mcpServers 字段。正确做法是在项目树中添加 .mcp.json 文件
 我自己的json位置是 C:\Users\admin\.claude\settings.json 文件
-    需要在settings.json 中  "enabledMcpjsonServers": 这是开启的MCP服务
-    插件不支持直接在这个JSON里些mcpServers
-    而是在项目目录中 写了.mcp.json
-    本地项目中的 .mcp.json 只针对该项目,而不是全局
 
-插件的MCP 服务器配置写在 settings.json 中（mcpServers 字段），支持四个位置：
-作用域	文件路径
-项目（共享）	.claude/settings.json
-项目（本地）	.claude/settings.local.json
-用户（共享）	~/.claude/settings.json
-用户（本地）	~/.claude/settings.local.json
-我自己的json位置是 C:\Users\admin\.claude\settings.json 文件
+1.需要在settings.json 中  "enabledMcpjsonServers": 这是开启对应的MCP服务
+2.因为插件不支持直接在这个setting.json里写mcpServers
+3.所以应该在项目目录中 写一个.mcp.json 然后配置mcpServers字段的MCP
+4.本地项目中的 .mcp.json 只针对该项目,而不是全局
+
+配置文件settings.json 有四个位置：
+
+    作用域	        文件路径
+    项目（共享)   	.claude/settings.json
+    项目（本地）	    .claude/settings.local.json
+    用户（共享）	    ~/.claude/settings.json
+    用户（本地）	    ~/.claude/settings.local.json
+
+我自己的json位置是 C:\Users\admin\.claude\settings.json 如上,这是一个用户级的文件,deepseek的env 环境配置都在这里面
 
 
 
@@ -33,7 +36,7 @@ claude for VS code 插件 和CIL命令行的 MCP的安装方法是不同的
 
 
 用户级MCP  存放在c:\Users\admin\.mcp.json 位置
-
+全局级MCP  存放在C:\Users\admin\.claude.json位置
 
 扩展级MCP, 用户级和项目级 只支持stdio 不支持http
 所以http的mcp 存放在
@@ -41,11 +44,11 @@ C:\Users\admin\AppData\Roaming/Code/User/globalStorage/saoudrizwan.claude-dev/se
 这是 Claude Dev 这个 VS Code 扩展自己私有的配置文件，跟你的项目无关，只属于这个扩展自己管理。支持所有 MCP 类型（包括 remote HTTP）。
 
 
-全局级
+全局级 C:\Users\admin\.claude.json
 
  官方 Claude Code 扩展自带了一个 claude.exe 在扩展目录里。用这个来添加 deepwiki。
 这是
-C:\Users\admin\.claude.json
+
 
 1. .claude.json 是什么
 它是 Claude Code 的全局用户配置文件。之前加的 deepwiki 就在里面。不同于 .mcp.json（项目级，共享给团队），这个文件是你个人电脑上私有的，存的是你自己的设置。
